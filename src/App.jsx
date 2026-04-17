@@ -3,6 +3,7 @@ import {PRIO_ORDER, THEMES} from "./helpers/consts.jsx";
 import Modal from "./components/Modal.jsx";
 import TodoItem from "./components/TodoButton.jsx";
 import INITIAL_TODOS from "./helpers/example-data.jsx";
+import {deadlineStatus} from "./helpers/functions.jsx";
 
 export default function TodoApp() {
 	const [todos, setTodos] = useState(INITIAL_TODOS);
@@ -67,7 +68,7 @@ export default function TodoApp() {
 		setModalOpen(false);
 	};
 	
-	const mono = "'DM Mono', monospace";
+	const mono = '"Comic Neue", cursive';
 	const filters = [
 		{key: "all", label: "Всі"},
 		{key: "active", label: "Активні"},
@@ -77,7 +78,7 @@ export default function TodoApp() {
 	
 	return (
 		<div style={{
-			height: "100",
+			minHeight: "100vh",
 			background: t.bg,
 			width: "100%",
 			color: t.text,
@@ -85,7 +86,7 @@ export default function TodoApp() {
 			margin: '0 auto',
 			display: "flex",
 			justifyContent: "center",
-			padding: "5rem 0rem",
+			padding: "4rem 2rem",
 			transition: "background 0.25s",
 		}}>
 			<div style={{display: 'flex', flexDirection: 'column', width: "100%", maxWidth: 1000, gap: 8}}>
